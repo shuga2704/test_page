@@ -1,7 +1,7 @@
 import React from 'react'
 import { GlobalStyle } from 'src/utils'
 import styled from 'styled-components'
-import { TopMenu, ContactUs } from 'src/components'
+import { TopMenu, ContactUs, Feedback } from 'src/components'
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,8 +18,8 @@ function App() {
 
       <Wrapper>
         <TopMenu />
-
         <ContactUs />
+        <Feedback />
 
         {/* <div className="grid">*/}
         {/*  <div className="grid__item grid__item_item1">four columns</div>*/}

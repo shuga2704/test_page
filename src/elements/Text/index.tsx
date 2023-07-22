@@ -5,9 +5,18 @@ import styled from 'styled-components'
 import { TextVariant, textVariants } from './variants'
 
 const TextContainer: any = styled.span.attrs<Props>(
-  ({ textOverflow, textTransform, color, align, display, whiteSpace }) => ({
+  ({
+    textOverflow,
+    lineHeight,
+    textTransform,
+    color,
+    align,
+    display,
+    whiteSpace,
+  }) => ({
     style: {
       display,
+      lineHeight,
       textAlign: align,
       textOverflow,
       textTransform,
@@ -33,6 +42,7 @@ const TextContainer: any = styled.span.attrs<Props>(
 
 interface Props {
   readonly variant?: TextVariant
+  readonly lineHeight?: string
   readonly display?: 'block' | 'inline' | 'grid' | 'flex'
   readonly align?: 'left' | 'center' | 'right'
   readonly color?: Color | string
@@ -49,6 +59,7 @@ interface Props {
 
 const Text: React.FC<Props> = ({
   variant = 'body1',
+  lineHeight,
   align,
   color,
   display = 'inline',
@@ -60,6 +71,7 @@ const Text: React.FC<Props> = ({
   <TextContainer
     data-variant={variant}
     display={display}
+    lineHeight={lineHeight}
     color={color}
     align={align}
     textOverflow={textOverflow}

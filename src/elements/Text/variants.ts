@@ -1,6 +1,6 @@
 import { Color } from 'src/utils'
 
-export type TextVariant = 'h1' | 'body1'
+export type TextVariant = 'h1' | 'h2' | 'body1'
 
 export const textVariants: {
   [variant: string]: {
@@ -17,6 +17,11 @@ export const textVariants: {
     fontFamily: 'PolySans, sans-serif',
     fontSize: '88px',
     fontWeight: 950,
+  },
+  h2: {
+    fontFamily: 'PolySans, sans-serif',
+    fontSize: '56px',
+    fontWeight: 900,
   },
   body1: {
     fontFamily: 'NeueHaasUnicaW1G, sans-serif',

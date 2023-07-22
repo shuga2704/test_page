@@ -87,13 +87,6 @@ export const GlobalStyle = createGlobalStyle`
     color: ${Color.primary};
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(12, [col] 1fr);
-    grid-template-rows: repeat(5, [row] auto);
-    grid-column-gap: 1em;
-    grid-row-gap: 15px;
-  }
 
   .grid__item {
     background: #eee;
