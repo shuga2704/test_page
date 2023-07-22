@@ -86,4 +86,44 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     color: ${Color.primary};
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, [col] 1fr);
+    grid-template-rows: repeat(5, [row] auto);
+    grid-column-gap: 1em;
+    grid-row-gap: 15px;
+  }
+
+  .grid__item {
+    background: #eee;
+    text-transform: uppercase;
+    padding: 1em;
+    font-size: 14px;
+  }
+
+  .grid__item_item1 {
+    grid-column: col / span 4;
+    grid-row: row;
+  }
+
+  .grid__item_item2 {
+    grid-column: col 5 / span 4;
+    grid-row: row;
+  }
+
+  .grid__item_item3 {
+    grid-column: col 9 / span 4;
+    grid-row: row;
+  }
+
+  .grid__item_item4 {
+    grid-column: col / span 8;
+    grid-row: row 2;
+  }
+
+  .grid__item_item5 {
+    grid-column: col 9 / span 4;
+    grid-row: row 2;
+  }
 `
