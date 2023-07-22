@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { EmailForm, Text } from 'src/elements'
-import { Color } from 'src/utils'
+import { EmailForm } from 'src/elements'
+import { Color, device } from 'src/utils'
 import Twitter from 'src/assets/Twitter.svg'
 import Facebook from 'src/assets/Facebook.svg'
 import Instagram from 'src/assets/Instagram.svg'
@@ -10,6 +10,10 @@ import { links } from './mocks'
 const Wrapper = styled.div`
   padding: 64px 64px 50px;
   background: ${Color.dark};
+
+  @media ${device.lg} {
+    padding: 32px 20px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -17,6 +21,11 @@ const ContentWrapper = styled.div`
   grid-template-columns: repeat(12, [col] 1fr);
   grid-column-gap: 2em;
   margin: 0 0 10px 0;
+
+  @media ${device.lg} {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const ContactBlock = styled.div`
@@ -25,6 +34,11 @@ const ContactBlock = styled.div`
   gap: 32px;
   grid-column: col / span 5;
   grid-row: row;
+
+  @media ${device.lg} {
+    gap: 24px;
+    margin: 0 0 40px 0;
+  }
 `
 
 const IconsWrapper = styled.div`
@@ -50,7 +64,12 @@ const LinksBlock = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-column: col 7 / span 6;
   grid-row: row;
-  color: red;
+
+  @media ${device.lg} {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 32px;
+    margin: 0 0 40px 0;
+  }
 `
 
 const LinkGroup = styled.div`
@@ -78,9 +97,7 @@ const Footer = () => (
   <Wrapper>
     <ContentWrapper>
       <ContactBlock>
-        <Text variant="h3" color={Color.white}>
-          Stay in the know
-        </Text>
+        <h3>Stay in the know</h3>
 
         <EmailForm />
 
@@ -101,10 +118,8 @@ const Footer = () => (
 
       <LinksBlock>
         {links.map(({ title, childrenLinks }, index) => (
-          <LinkGroup>
-            <Text key={index} variant="subtitle2" color={Color.white}>
-              {title}
-            </Text>
+          <LinkGroup key={index}>
+            <h5>{title}</h5>
 
             <ChildrenLinks>
               {childrenLinks.map(({ title, link }, childrenIndex) => (
@@ -118,9 +133,7 @@ const Footer = () => (
       </LinksBlock>
     </ContentWrapper>
 
-    <Text variant="small1" color={Color.white}>
-      ©2022 Hubble – All Rights Reserved
-    </Text>
+    <span className="small2">©2022 Hubble – All Rights Reserved</span>
   </Wrapper>
 )
 

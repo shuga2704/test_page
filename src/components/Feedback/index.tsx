@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text } from 'src/elements'
+import { device } from 'src/utils'
+import { Box } from 'src/elements'
 
 const Wrapper = styled.div`
   display: grid;
@@ -10,6 +11,13 @@ const Wrapper = styled.div`
   max-width: 1152px;
   margin: 0 auto;
   padding: 54px 0;
+
+  @media ${device.lg} {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px 20px 60px;
+  }
 `
 
 const Item: any = styled.div`
@@ -21,46 +29,45 @@ const Item: any = styled.div`
   grid-row: row;
 `
 
-const Link = styled.a`
-  font-family: 'PolySans', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  text-decoration: underline;
-  cursor: pointer;
-`
-
 const Feedback = () => (
   <Wrapper>
     <Item gridColumn="col / span 4">
-      <Text variant="h2">Phone</Text>
+      <h2>Phone</h2>
 
-      <Link>1-844-334-1640</Link>
+      <a className="feedback">1-844-334-1640</a>
 
-      <Text variant="body1" lineHeight="26px" align="center">
-        Give us a call. Our customer service team is ready to help — 7 days a
-        week from
-        <br /> 9am-9pm Eastern Time.
-      </Text>
+      <Box textAlign="center">
+        <span>
+          Give us a call. Our customer service team is ready to help — 7 days a
+          week from
+          <br /> 9am-9pm Eastern Time.
+        </span>
+      </Box>
     </Item>
 
     <Item gridColumn="col 5 / span 4">
-      <Text variant="h2">Chat</Text>
+      <h2>Chat</h2>
 
-      <Link>Open Chat</Link>
+      <a className="feedback">Open Chat</a>
 
-      <Text variant="body1" lineHeight="26px" align="center">
-        Send us a message. Start a conversation with our online team.
-      </Text>
+      <Box textAlign="center">
+        <span>
+          Send us a message. Start a conversation with our online team.
+        </span>
+      </Box>
     </Item>
+
     <Item gridColumn="col 9 / span 4">
-      <Text variant="h2">Questions?</Text>
+      <h2>Questions?</h2>
 
-      <Link>Visit Our FAQs Page</Link>
+      <a className="feedback">Visit Our FAQs Page</a>
 
-      <Text variant="body1" lineHeight="26px" align="center">
-        Find answers. We’ve taken your most pressing questions and queued up
-        answers we know will help.
-      </Text>
+      <Box textAlign="center">
+        <span>
+          Find answers. We’ve taken your most pressing questions and queued up
+          answers we know will help.
+        </span>
+      </Box>
     </Item>
   </Wrapper>
 )

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Text, Box } from 'src/elements'
-import { Color } from 'src/utils'
+import { Color, device } from 'src/utils'
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,6 +9,10 @@ const Wrapper = styled.div`
   padding: 8px;
   border-radius: 5px;
   background: ${Color.white};
+
+  @media ${device.lg} {
+    padding: 4px;
+  }
 `
 
 const Input = styled.input`
@@ -18,7 +21,7 @@ const Input = styled.input`
   border: none;
 `
 
-const Button = styled.div`
+const Button = styled.button`
   height: 40px;
   padding: 0 33px;
   line-height: 40px;
@@ -26,6 +29,10 @@ const Button = styled.div`
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
+
+  @media ${device.lg} {
+    padding: 0 14px;
+  }
 `
 
 const EmailForm = () => {
@@ -43,11 +50,7 @@ const EmailForm = () => {
         placeholder="Enter Email Address"
       />
 
-      <Button onClick={handleClick}>
-        <Text variant="subtitle2" color={Color.white}>
-          Submit
-        </Text>
-      </Button>
+      <Button onClick={handleClick}>Submit</Button>
     </Wrapper>
   )
 }

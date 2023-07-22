@@ -1,18 +1,28 @@
 import React from 'react'
-import { Color } from 'src/utils'
+import { device } from 'src/utils'
 import styled from 'styled-components'
-import { Text } from 'src/elements'
-import ContactUsBackground from 'src/assets/ContactUsBackground.png'
+import ContactUsBackgroundDesktop from 'src/assets/ContactUsBackgroundDesktop.png'
+import ContactUsBackgroundMobile from 'src/assets/ContactUsBackgroundMobile.png'
 
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
   width: 100%;
   height: 560px;
-  background-image: url(${ContactUsBackground});
+  background-image: url(${ContactUsBackgroundDesktop});
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-top-left-radius: 34px;
   border-top-right-radius: 34px;
+
+  @media ${device.lg} {
+    height: 400px;
+  }
+
+  @media ${device.xs} {
+    background-image: url(${ContactUsBackgroundMobile});
+  }
 `
 
 const Content = styled.div`
@@ -28,18 +38,20 @@ const Content = styled.div`
     rgba(255, 255, 255, 0),
     rgba(63, 63, 63, 0.75)
   );
+
+  @media ${device.lg} {
+    height: 200px;
+    padding: 40px 20px 0;
+    row-gap: 16px;
+  }
 `
 
 const ContactUs = () => (
   <Wrapper>
     <Content>
-      <Text variant="h1" color={Color.white}>
-        Contact Us
-      </Text>
+      <h1>Contact Us</h1>
 
-      <Text variant="body1" color={Color.white}>
-        We're here to help
-      </Text>
+      <h6>We're here to help</h6>
     </Content>
   </Wrapper>
 )
