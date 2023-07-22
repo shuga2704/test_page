@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1152px;
   height: 258px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   padding: 0 48px;
   background: url(${HubbleHeadDesktop}) ${Color.purple} no-repeat center right;
   background-size: 688px;
@@ -20,6 +20,7 @@ const Wrapper = styled.div`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
   width: 355px;
 `
@@ -35,14 +36,7 @@ const Shop = () => (
         Delivered right to your door! See, easy.
       </Text>
 
-      <Box
-        display="flex"
-        minWidth="180px"
-        margin="8px 0 0 0"
-        align="center"
-        gap="8px"
-        cursor="pointer"
-      >
+      <Box display="flex" margin="8px 0 0 0" gap="8px" cursor="pointer">
         <Text variant="subtitle2" color={Color.purpleDark}>
           Shop Contact Lenses
         </Text>

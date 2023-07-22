@@ -1,7 +1,7 @@
 import React from 'react'
 import { GlobalStyle } from 'src/utils'
 import styled from 'styled-components'
-import { TopMenu, ContactUs, Feedback, Shop } from 'src/components'
+import { TopMenu, ContactUs, Feedback, Shop, Footer } from 'src/components'
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,14 +21,7 @@ function App() {
         <ContactUs />
         <Feedback />
         <Shop />
-
-        {/* <div className="grid">*/}
-        {/*  <div className="grid__item grid__item_item1">four columns</div>*/}
-        {/*  <div className="grid__item grid__item_item2">four columns</div>*/}
-        {/*  <div className="grid__item grid__item_item3">four columns</div>*/}
-        {/*  <div className="grid__item grid__item_item4">eight columns</div>*/}
-        {/*  <div className="grid__item grid__item_item5">four columns</div>*/}
-        {/* </div>*/}
+        <Footer />
       </Wrapper>
     </>
   )

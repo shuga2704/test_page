@@ -86,4 +86,21 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     color: ${Color.primary};
   }
+  
+  input {
+    font-family: 'NeueHaasUnicaW1G', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: ${Color.primary};
+    outline: none;
+  }
+
+  input::placeholder {
+    color: #999999;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
 `

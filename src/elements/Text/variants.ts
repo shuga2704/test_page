@@ -3,8 +3,10 @@ import { Color } from 'src/utils'
 export type TextVariant =
   | 'h1'
   | 'h2'
+  | 'h3'
   | 'h4'
   | 'body1'
+  | 'small1'
   | 'subtitle1'
   | 'subtitle2'
 
@@ -29,6 +31,12 @@ export const textVariants: {
     fontSize: '56px',
     fontWeight: 900,
   },
+  h3: {
+    fontFamily: 'PolySans, sans-serif',
+    fontSize: '30px',
+    lineHeight: '42px',
+    fontWeight: 400,
+  },
   h4: {
     fontFamily: 'PolySans, sans-serif',
     fontSize: '24px',
@@ -38,6 +46,12 @@ export const textVariants: {
   body1: {
     fontFamily: 'NeueHaasUnicaW1G, sans-serif',
     fontSize: '18px',
+    fontWeight: 400,
+  },
+  small1: {
+    fontFamily: 'NeueHaasUnicaW1G, sans-serif',
+    fontSize: '12px',
+    lineHeight: '18px',
     fontWeight: 400,
   },
   subtitle1: {
