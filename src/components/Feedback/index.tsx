@@ -1,15 +1,13 @@
 import React from 'react'
-import { Color } from 'src/utils'
 import styled from 'styled-components'
 import { Text } from 'src/elements'
-import Logo from 'src/assets/Logo.svg'
 
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, [col] 1fr);
   grid-column-gap: 2em;
   width: 100%;
-  max-width: 1150px;
+  max-width: 1152px;
   margin: 0 auto;
   padding: 54px 0;
 `
